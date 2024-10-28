@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "confimations",
+  "info": {
+    "singularName": "confimation",
+    "pluralName": "confimations",
+    "displayName": "Confirmation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome_aniversariante": {
+      "type": "string",
+      "required": true
+    },
+    "local_evento": {
+      "type": "text",
+      "required": true
+    },
+    "data_evento": {
+      "type": "date",
+      "required": true,
+      "default": "2023-09-08"
+    },
+    "hora_evento": {
+      "type": "time",
+      "required": true,
+      "default": "00:00"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "confirmations"
+    },
+    "nome_responsavel": {
+      "type": "string",
+      "required": true
+    },
+    "qtd_esperada_convidados": {
+      "type": "integer"
+    },
+    "qtd_confirmado_convidados": {
+      "type": "integer",
+      "default": 0
+    },
+    "qtd_nao_confirmado_convidados": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "nome_convidados": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nome-convidado.nome-convidado",
+      "mappedBy": "confirmation"
+    },
+    "qtd_acompanhantes_confirm": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "contato_confirm": {
+      "type": "biginteger"
+    }
+  }
+}

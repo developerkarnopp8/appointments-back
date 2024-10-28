@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nome_convidados",
+  "info": {
+    "singularName": "nome-convidado",
+    "pluralName": "nome-convidados",
+    "displayName": "Nome Convidados",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome_convidado": {
+      "type": "string"
+    },
+    "qtd_acompanhantes": {
+      "type": "integer"
+    },
+    "confirmation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::confimation.confimation",
+      "inversedBy": "nome_convidados"
+    },
+    "phone_contato": {
+      "type": "biginteger"
+    },
+    "acompanhantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::acompanhante.acompanhante",
+      "mappedBy": "nome_convidado"
+    },
+    "tem_acompanhates": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "ip_user": {
+      "type": "text"
+    }
+  }
+}

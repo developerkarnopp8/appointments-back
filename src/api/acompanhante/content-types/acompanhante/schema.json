@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acompanhantes",
+  "info": {
+    "singularName": "acompanhante",
+    "pluralName": "acompanhantes",
+    "displayName": "Acompanhantes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name_acompanhante": {
+      "type": "string"
+    },
+    "nome_convidado": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::nome-convidado.nome-convidado",
+      "inversedBy": "acompanhantes"
+    },
+    "categoria_acompanhantes": {
+      "type": "string"
+    }
+  }
+}
